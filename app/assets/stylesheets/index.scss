@@ -2,3 +2,27 @@
   cursor: pointer;
   color: #666;
 }
+
+.pagination-button{
+  color: black;
+  border: 1px solid lightgray;
+  padding: 2px 5px 0px 5px;
+
+  &.active{
+    background-color: #666;
+    color: white;
+  }
+  &.active:hover{
+    color: white;
+    cursor: auto;
+  }
+}
+
+.dots{
+  margin: 0 5px;
+}
+
+.pagination-button:hover{
+  cursor: pointer;
+  color: #666;
+}
