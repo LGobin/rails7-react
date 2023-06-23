@@ -5,6 +5,7 @@ import EmptyQuestionMessage from './EmptyQuestionMessage'
 import Spinner from './Spinner'
 import NewQuestion from './NewQuestion'
 import EditQuestion from './EditQuestion'
+import Pagination from './Pagination'
 
 const QuestionList = () => {
 
@@ -22,6 +23,7 @@ const QuestionList = () => {
   const [showAlert, setShowAlert] = useState(false)
   const [showSpinner, setShowSpinner] = useState(true)
   const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [currentItems, setCurrentItems] = useState([]);
 
   const questionsUrl = 'http://localhost:3000/api/v1/questions'
 
@@ -31,6 +33,7 @@ const QuestionList = () => {
       .then((data) => {
         setQuestionsList(data)
         setShowSpinner(false)
+        setCurrentItems(data.slice(0, 10))
       })
   }
   
@@ -107,8 +110,9 @@ const QuestionList = () => {
         </div>
         <NewQuestion />
         <EditQuestion selectedQuestion={selectedQuestion} fetchQuestionList={fetchQuestionList}/>
+        <Pagination setCurrentItems={setCurrentItems} questionsList={questionsList} />
         { questionsList.length > 0 ?
-          questionsList.map((question) =>
+          currentItems.map((question) =>
             <QuestionDetail question={question} key={question.id} setSelectedQuestion={setSelectedQuestion} />
           ) : <Spinner showSpinner={showSpinner}/> 
         }
