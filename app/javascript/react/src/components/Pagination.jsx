@@ -25,7 +25,7 @@ const Pagination = (props) => {
 
   useEffect(() => {
     props.setCurrentItems(currentItems);
-  }, [currentPage, itemsPerPage]);
+  }, [currentPage, itemsPerPage, props.questionsList]);
 
   const paginationButtons = [];
   const totalPages = Math.ceil(props.questionsList.length / itemsPerPage);
