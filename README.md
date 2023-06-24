@@ -25,3 +25,7 @@ This is a Ruby on Rails web application that allows users to view and interact w
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+## Disclaimer
+
+App started following [this tutorial](https://www.youtube.com/playlist?list=PL6SEI86zExmvbxK9wlG3lfm98PFLxtxvP), but continued upgrading it.
