@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CommentList from './CommentList'
 
 const QuestionDetail = ({ question, setSelectedQuestion }) => {
   const [likeCount, setLikeCount] = useState(question.likes_count);
@@ -67,6 +68,7 @@ const QuestionDetail = ({ question, setSelectedQuestion }) => {
             </span>
           )}
         </button>
+        <CommentList comments={question.comments} />
       </div>
     </div>
   );
