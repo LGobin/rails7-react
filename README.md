@@ -1,24 +1,27 @@
-# README
+# Questions App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails web application that allows users to view and interact with a list of questions. It leverages React for the front-end interface and includes features such as pagination, item count per page selection, and the ability to like and dislike questions.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Users can create their own questions and update existing ones by clicking on any question's title.
+- Pagination: Users can navigate through the list of questions using pagination buttons.
+- Item Count Per Page: Users can select the number of questions to display per page from a dropdown menu.
+- Like and Dislike: Users can like or dislike a question, and the counts are updated in real-time.
 
-* System dependencies
+## Installation
 
-* Configuration
+1. Clone the repository: `git clone https://github.com/your-username/questions-app.git`
+2. Navigate to the project directory: `cd questions-app`
+3. Install the dependencies: `bundle install`
+4. Set up the database: `rails db:create` and `rails db:migrate`
+5. You can also seed the database using `rails db:seed`
 
-* Database creation
+## Usage
 
-* Database initialization
+1. Start the Rails server: `rails server`
+2. Open your web browser and go to `http://localhost:3000` to view the app.
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
