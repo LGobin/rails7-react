@@ -8,6 +8,8 @@ Rails.application.routes.draw do
           put :update_counter
         end
       end
+
+      resources :comments, only: [:create, :update]
     end
   end
 end

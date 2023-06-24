@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_19_104637) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_24_095100) do
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_comments_on_question_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.string "tag"
@@ -20,4 +28,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_19_104637) do
     t.integer "dislikes_count", default: 0
   end
 
+  add_foreign_key "comments", "questions"
 end

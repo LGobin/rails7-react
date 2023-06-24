@@ -13,7 +13,7 @@ class Api::V1::QuestionsController < ApplicationController
       @questions = @questions.where("title LIKE ?", "%#{params[:search]}%")
     end
 
-    render json: @questions, status: :ok
+    render json: @questions, include: :comments, status: :ok
   end
 
   def create
