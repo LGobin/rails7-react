@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 
-const TextEditor = () => {
-  const [text, setText] = useState('');
+const TextEditor = ({attribute, setAttribute}) => {
   const [mode, setMode] = useState('edit');
 
-  const handleTextChange = (e) => {
-    setText(e.target.value);
+  const handleAttributeChange = (e) => {
+    setAttribute(e.target.value);
   };
 
   const handleBoldClick = () => {
-    setText((prevText) => prevText + '<b></b>');
+    setAttribute((prevText) => prevText + '<b></b>');
   };
 
   const handleItalicClick = () => {
-    setText((prevText) => prevText + '<i></i>');
+    setAttribute((prevText) => prevText + '<i></i>');
   };
 
   const handleModeToggle = () => {
@@ -35,12 +34,12 @@ const TextEditor = () => {
       </div>
       {mode === 'edit' ? (
         <textarea
-          value={text}
-          onChange={handleTextChange}
+          value={attribute}
+          onChange={handleAttributeChange}
           placeholder="Type your text here..."
         ></textarea>
       ) : (
-        <div className="preview" dangerouslySetInnerHTML={{ __html: text }}></div>
+        <div className="preview" dangerouslySetInnerHTML={{ __html: attribute }}></div>
       )}
     </div>
   );

@@ -49,7 +49,6 @@ const NewQuestion = () => {
         setFormErrors(data.errors || {});
       }
     } catch (error) {
-      console.log(error);
     }
   };
 

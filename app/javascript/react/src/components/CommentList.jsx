@@ -5,8 +5,7 @@ const CommentList = ({comments}) => {
     <div>
       { comments.map((comment) =>
         <div className="comment" key={comment.id}>
-          <p>
-            {comment.content}
+          <p dangerouslySetInnerHTML={{ __html: comment.content }}>
           </p>
         </div>
       )}
