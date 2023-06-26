@@ -47,10 +47,11 @@ const CommentDetail = ({comment, blockEdit, setBlockEdit}) => {
       { edit ?
         <div>
           <TextEditor attribute={tempContent} setAttribute={setTempContent} />
-          <button className="mt-3 btn btn-primary" onClick={handleSubmit}>
+          {formErrors['content'] && <p className="comment-content-error small text-danger">{formErrors['content']}</p>}
+          <button className="submit-comment-button mt-3 btn btn-primary" onClick={handleSubmit}>
             Submit
           </button>
-          <button className="mt-3 btn btn-secondary" onClick={() => viewMode()}>
+          <button className="cancel-comment-button mt-3 btn btn-secondary" onClick={() => viewMode()}>
             Cancel
           </button>
         </div> :

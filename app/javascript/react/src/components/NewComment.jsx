@@ -36,7 +36,8 @@ const NewComment = ({question, comments, setComments}) => {
     <div>
       <p className="leave-comment fw-bold">Leave a comment</p>
       <TextEditor attribute={content} setAttribute={setContent}/>
-      <button className="mt-3 btn btn-primary" onClick={handleSubmit}>
+      {formErrors['content'] && <p className="comment-content-error small text-danger">{formErrors['content']}</p>}
+      <button className="submit-comment-button mt-3 btn btn-primary" onClick={handleSubmit}>
         Submit
       </button>
     </div>
