@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CommentDetail from './CommentDetail'
 
 const CommentList = ({comments}) => {
+  const [blockEdit, setBlockEdit] = useState(false);
   return(
     <div>
       { comments.map((comment) =>
-        <div className="comment" key={comment.id}>
-          <p dangerouslySetInnerHTML={{ __html: comment.content }}>
-          </p>
+        <div key={comment.id}>
+          <CommentDetail comment={comment} blockEdit={blockEdit} setBlockEdit={setBlockEdit} />
         </div>
       )}
     </div>
