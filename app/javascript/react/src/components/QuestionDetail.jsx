@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import CommentList from './CommentList'
+import NewComment from './NewComment'
 
 const QuestionDetail = ({ question, setSelectedQuestion }) => {
+  const [comments, setComments] = useState(question.comments)
   const [likeCount, setLikeCount] = useState(question.likes_count);
   const [dislikeCount, setDislikeCount] = useState(question.dislikes_count);
 
@@ -68,7 +70,8 @@ const QuestionDetail = ({ question, setSelectedQuestion }) => {
             </span>
           )}
         </button>
-        <CommentList comments={question.comments} />
+        <CommentList comments={comments} />
+        <NewComment question={question} comments={comments} setComments={setComments} />
       </div>
     </div>
   );
