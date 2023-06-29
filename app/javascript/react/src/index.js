@@ -1,1 +1,1 @@
-import Welcome from './components/Welcome'
+import Index from './components/Index'

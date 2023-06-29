@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import CommentList from './CommentList'
-import NewComment from './NewComment'
+import CommentList from '../comments/CommentList'
+import NewComment from '../comments/NewComment'
 
 const QuestionDetail = ({ question, setSelectedQuestion }) => {
   const [comments, setComments] = useState(question.comments)

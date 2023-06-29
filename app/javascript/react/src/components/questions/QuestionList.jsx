@@ -2,10 +2,10 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import QuestionDetail from './QuestionDetail'
 import EmptyQuestionMessage from './EmptyQuestionMessage'
-import Spinner from './Spinner'
-import NewQuestion from './NewQuestion'
+import Spinner from '../Spinner'
+import NewQuestion from '../comments/NewQuestion'
 import EditQuestion from './EditQuestion'
-import Pagination from './Pagination'
+import Pagination from '../utilities/Pagination'
 
 const QuestionList = () => {
 
