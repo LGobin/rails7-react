@@ -15,7 +15,7 @@ class Index extends React.Component {
 const root = ReactDOM.createRoot(document.getElementById('welcome'))
 root.render(
   <React.StrictMode>
-    <Welcome />
+    <Index />
   </React.StrictMode>
 )
 

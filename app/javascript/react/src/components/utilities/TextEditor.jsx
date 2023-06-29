@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
-const TextEditor = ({attribute, setAttribute}) => {
+const TextEditor = ({ attribute, setAttribute }) => {
   const [mode, setMode] = useState('edit');
+  const textareaRef = useRef(null);
 
   const handleAttributeChange = (e) => {
     setAttribute(e.target.value);
   };
 
-  const handleBoldClick = () => {
-    setAttribute((prevText) => prevText + '<b></b>');
-  };
+  const handleTagInsertion = (tag) => {
+    const textarea = textareaRef.current;
+    const { selectionStart, selectionEnd } = textarea;
 
-  const handleItalicClick = () => {
-    setAttribute((prevText) => prevText + '<i></i>');
+    const newText =
+      attribute.slice(0, selectionStart) +
+      `<${tag}>` +
+      attribute.slice(selectionStart, selectionEnd) +
+      `</${tag}>` +
+      attribute.slice(selectionEnd);
+
+    setAttribute(newText);
   };
 
   const handleModeToggle = () => {
@@ -22,10 +29,10 @@ const TextEditor = ({attribute, setAttribute}) => {
   return (
     <div className="text-editor">
       <div className="toolbar">
-        <div className="toolbar-button" onClick={handleBoldClick}>
+        <div className="toolbar-button" onClick={() => handleTagInsertion('b')}>
           B
         </div>
-        <div className="toolbar-button" onClick={handleItalicClick}>
+        <div className="toolbar-button" onClick={() => handleTagInsertion('i')}>
           I
         </div>
         <div className="toolbar-button preview-edit-button" onClick={handleModeToggle}>
@@ -34,6 +41,7 @@ const TextEditor = ({attribute, setAttribute}) => {
       </div>
       {mode === 'edit' ? (
         <textarea
+          ref={textareaRef}
           value={attribute}
           onChange={handleAttributeChange}
           placeholder="Type your text here..."
