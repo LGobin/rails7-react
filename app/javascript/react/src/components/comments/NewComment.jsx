@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TextEditor from './TextEditor'
+import TextEditor from '../utilities/TextEditor'
 
 const NewComment = ({question, comments, setComments}) => {
   const [content, setContent] = useState('');

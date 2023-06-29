@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TextEditor from './TextEditor'
+import TextEditor from '../utilities/TextEditor'
 
 const CommentDetail = ({comment, blockEdit, setBlockEdit}) => {
   const [formErrors, setFormErrors] = useState({})

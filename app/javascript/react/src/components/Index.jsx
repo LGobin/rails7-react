@@ -1,8 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import QuestionList from './QuestionList'
+import QuestionList from './questions/QuestionList'
 
-class Welcome extends React.Component {
+class Index extends React.Component {
   render() {
     return(
       <div className="container mt-5">
@@ -19,4 +19,4 @@ root.render(
   </React.StrictMode>
 )
 
-export default Welcome
+export default Index
